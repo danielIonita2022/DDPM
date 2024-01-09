@@ -41,13 +41,13 @@ trainer = Trainer(
 )
 
 trainer.load(5)
-# trainer.train()
-# trained_model = trainer.model
-# print(trained_model)
-# sampled_images = trained_model.sample(batch_size=16)
-# for i, img_tensor in enumerate(sampled_images):
-#     img = tensor_to_pil(img_tensor)
-#     img.save(f'/mnt/hdd1/home/danielionita/diffusion_project/denoising-diffusion-pytorch/results/testing/sampled_image_{i}.png')  # Save each image
+trainer.train()
+trained_model = trainer.model
+print(trained_model)
+sampled_images = trained_model.sample(batch_size=16)
+for i, img_tensor in enumerate(sampled_images):
+    img = tensor_to_pil(img_tensor)
+    img.save(f'/mnt/hdd1/home/danielionita/diffusion_project/denoising-diffusion-pytorch/results/testing/sampled_image_{i}.png')  # Save each image
 
 print(trainer.fid_scorer.fid_score())
 
